@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed — hsrpebook.online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">HSRP<span>eBook</span>.online</a>
+    </div>
+  </nav>
+
+  <div class="confirm-page">
+    <div class="confirm-card">
+
+      <div class="confirm-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="#22a06b"/>
+          <path d="M7 12.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h2>Booking Confirmed!</h2>
+      <p>Thank you for your order. Your HSRP application has been received and is being processed.</p>
+
+      <div class="confirm-ref">
+        Transaction ID: <strong id="txnRef">—</strong>
+      </div>
+
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px">
+        Please save your Transaction ID for reference. We will contact you on your registered mobile number once your plate is dispatched.
+      </p>
+
+      <a href="index.html" class="btn btn-dark btn-full">← Back to Home</a>
+      <a href="enquiry.html" class="btn btn-primary btn-full" style="margin-top:12px">Book Another →</a>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 hsrpebook.online — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Pull transaction ID from URL query param
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref');
+    if (ref) document.getElementById('txnRef').textContent = ref;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply for HSRP — hsrpebook.online</title>
+  <meta name="description" content="Apply for your High Security Registration Plate online. Fill vehicle details and complete payment." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">HSRP<span>eBook</span>.online</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#how">How It Works</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="enquiry.html" class="btn btn-primary">Apply Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="form-page">
+    <div class="form-card">
+
+      <!-- Step Bar -->
+      <div class="step-bar">
+        <div class="step-bar-item active" id="bar1">
+          <div class="step-circle active" id="circle1">1</div>
+          <span>Vehicle Details</span>
+        </div>
+        <div class="step-bar-item" id="bar2">
+          <div class="step-circle" id="circle2">2</div>
+          <span>Payment</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: Enquiry Form -->
+      <div id="step1">
+        <h2>New Enquiry Form</h2>
+        <p class="subtitle">Fields marked with <span style="color:#e53e3e">*</span> are required.</p>
+
+        <div class="alert alert-error" id="formAlert"></div>
+
+        <form id="enquiryForm" novalidate>
+
+          <!-- Honeypot (hidden from real users) -->
+          <div class="honeypot">
+            <input type="text" name="website" id="honeypot" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="req">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="As per RC Book" />
+              <div class="field-error" id="fullNameErr">Please enter your full name.</div>
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" maxlength="10" />
+              <div class="field-error" id="mobileErr">Please enter a valid 10-digit number.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email ID <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" />
+              <div class="field-error" id="emailErr">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+              <label for="state">State <span class="req">*</span></label>
+              <select id="state" name="state">
+                <option value="">Select Vehicle State</option>
+                <option>Andhra Pradesh</option>
+                <option>Arunachal Pradesh</option>
+                <option>Assam</option>
+                <option>Bihar</option>
+                <option>Chhattisgarh</option>
+                <option>Goa</option>
+                <option>Gujarat</option>
+                <option>Haryana</option>
+                <option>Himachal Pradesh</option>
+                <option>Jharkhand</option>
+                <option>Karnataka</option>
+                <option>Kerala</option>
+                <option>Madhya Pradesh</option>
+                <option>Maharashtra</option>
+                <option>Manipur</option>
+                <option>Meghalaya</option>
+                <option>Mizoram</option>
+                <option>Nagaland</option>
+                <option>Odisha</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+                <option>Sikkim</option>
+                <option>Tamil Nadu</option>
+                <option>Telangana</option>
+                <option>Tripura</option>
+                <option>Uttar Pradesh</option>
+                <option>Uttarakhand</option>
+                <option>West Bengal</option>
+                <option>Delhi</option>
+              </select>
+              <div class="field-error" id="stateErr">Please select your state.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="applicationType">Application Type <span class="req">*</span></label>
+              <select id="applicationType" name="applicationType">
+                <option value="">Select Type</option>
+                <option>New Plate</option>
+                <option>Replacement / Retain / Transfer</option>
+              </select>
+              <div class="field-error" id="applicationTypeErr">Please select application type.</div>
+            </div>
+            <div class="form-group">
+              <label for="vehicleType">Vehicle Type <span class="req">*</span></label>
+              <select id="vehicleType" name="vehicleType">
+                <option value="">Select Vehicle Type</option>
+                <option value="Two Wheeler">Two Wheeler</option>
+                <option value="Two Wheeler Electric">Two Wheeler Electric</option>
+                <option value="Three Wheeler">Three Wheeler</option>
+                <option value="Four Wheeler">Four Wheeler</option>
+                <option value="Four Wheeler Electric">Four Wheeler Electric</option>
+                <option value="Electric Vehicle">Electric Vehicle</option>
+                <option value="Tractor & Trailer">Tractor &amp; Trailer</option>
+                <option value="Heavy Vehicle">Heavy Vehicle</option>
+                <option value="Colour Sticker">Colour Sticker</option>
+              </select>
+              <div class="field-error" id="vehicleTypeErr">Please select vehicle type.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regNo">Vehicle Reg. No <span class="req">*</span></label>
+              <input type="text" id="regNo" name="regNo" placeholder="e.g. DL01AB1234" style="text-transform:uppercase" />
+              <div class="field-error" id="regNoErr">Please enter registration number.</div>
+            </div>
+            <div class="form-group">
+              <label for="chassisNo">Chassis No <span class="req">*</span></label>
+              <input type="text" id="chassisNo" name="chassisNo" placeholder="Last 5 digits / Full" style="text-transform:uppercase" />
+              <div class="field-error" id="chassisNoErr">Please enter chassis number.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="engineNo">Engine No <span class="req">*</span></label>
+              <input type="text" id="engineNo" name="engineNo" placeholder="Engine number" style="text-transform:uppercase" />
+              <div class="field-error" id="engineNoErr">Please enter engine number.</div>
+            </div>
+            <div class="form-group">
+              <label for="pinCode">Pin Code <span class="req">*</span></label>
+              <input type="text" id="pinCode" name="pinCode" placeholder="6-digit pin code" maxlength="6" />
+              <div class="field-error" id="pinCodeErr">Please enter a valid 6-digit pin code.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address <span class="req">*</span></label>
+            <textarea id="address" name="address" rows="3" placeholder="Full delivery address"></textarea>
+            <div class="field-error" id="addressErr">Please enter your address.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" style="margin-top:8px">
+            PROCEED TO PAYMENT →
+          </button>
+
+        </form>
+      </div>
+
+      <!-- STEP 2: Payment -->
+      <div id="step2" style="display:none">
+        <h2>Payment</h2>
+        <p class="subtitle">Scan the QR code to pay, then enter your Transaction ID to confirm.</p>
+
+        <!-- Order Summary -->
+        <div class="payment-summary">
+          <table>
+            <tr>
+              <td>Vehicle Type</td>
+              <td id="summaryVehicle">—</td>
+            </tr>
+            <tr>
+              <td>Application Type</td>
+              <td id="summaryAppType">—</td>
+            </tr>
+            <tr>
+              <td>Number of Plates</td>
+              <td>Pair</td>
+            </tr>
+            <tr class="total-row">
+              <td>Total Payable</td>
+              <td id="summaryAmount">₹ —</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- QR Code -->
+        <div class="payment-box">
+          <div class="qr-placeholder" id="qrContainer">
+            <!-- Replace src below with your actual UPI QR image path -->
+            <img src="assets/upi-qr.png" alt="UPI QR Code" onerror="this.parentElement.innerHTML='<span>QR Code<br>Coming Soon</span>'" />
+          </div>
+          <p class="upi-id">Pay to UPI ID: <strong>yourupi@bank</strong></p>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:4px">After payment, note the Transaction ID from your UPI app.</p>
+        </div>
+
+        <div class="alert alert-error" id="paymentAlert"></div>
+
+        <form id="paymentForm" novalidate>
+          <div class="form-group">
+            <label for="transactionId">Transaction ID <span class="req">*</span></label>
+            <input type="text" id="transactionId" name="transactionId" placeholder="Enter UPI Transaction ID" />
+            <div class="field-error" id="transactionIdErr">Please enter your transaction ID.</div>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:8px">
+            <button type="button" id="backBtn" class="btn btn-outline" style="background:var(--border);color:var(--text);flex:1">← Back</button>
+            <button type="submit" class="btn btn-primary" style="flex:2" id="submitBtn">Submit Order</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 hsrpebook.online — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── CONFIG ──────────────────────────────────────────────
+    // Paste your deployed Google Apps Script URL here
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxC2_LChqyDepA2KqtRrgb7r7MxyPceCfTzy7ODpSDSFzF0I4fnZmo_Eh-0uYyztH5Eg/exec';
+
+    // Pricing per vehicle type (₹)
+    const PRICES = {
+      'Two Wheeler': 400,
+      'Two Wheeler Electric': 400,
+      'Three Wheeler': 500,
+      'Four Wheeler': 600,
+      'Four Wheeler Electric': 600,
+      'Electric Vehicle': 600,
+      'Tractor & Trailer': 700,
+      'Heavy Vehicle': 700,
+      'Colour Sticker': 100,
+    };
+
+    // ── Mobile nav ──────────────────────────────────────────
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // ── Form data store ────────────────────────────────────
+    let formData = {};
+
+    // ── Helpers ────────────────────────────────────────────
+    function showError(id, msg) {
+      const el = document.getElementById(id);
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+    function clearError(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    function setFieldError(inputId, errId, show) {
+      const inp = document.getElementById(inputId);
+      if (show) { inp.classList.add('error'); document.getElementById(errId).style.display = 'block'; }
+      else { inp.classList.remove('error'); document.getElementById(errId).style.display = 'none'; }
+    }
+
+    // ── Step 1 Validation ──────────────────────────────────
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      const fields = [
+        { id: 'fullName',        err: 'fullNameErr',        check: v => v.trim().length >= 2 },
+        { id: 'mobile',          err: 'mobileErr',          check: v => /^\d{10}$/.test(v.trim()) },
+        { id: 'email',           err: 'emailErr',           check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+        { id: 'state',           err: 'stateErr',           check: v => v !== '' },
+        { id: 'applicationType', err: 'applicationTypeErr', check: v => v !== '' },
+        { id: 'vehicleType',     err: 'vehicleTypeErr',     check: v => v !== '' },
+        { id: 'regNo',           err: 'regNoErr',           check: v => v.trim().length >= 4 },
+        { id: 'chassisNo',       err: 'chassisNoErr',       check: v => v.trim().length >= 3 },
+        { id: 'engineNo',        err: 'engineNoErr',        check: v => v.trim().length >= 3 },
+        { id: 'pinCode',         err: 'pinCodeErr',         check: v => /^\d{6}$/.test(v.trim()) },
+        { id: 'address',         err: 'addressErr',         check: v => v.trim().length >= 10 },
+      ];
+
+      fields.forEach(f => {
+        const val = document.getElementById(f.id).value;
+        const ok = f.check(val);
+        setFieldError(f.id, f.err, !ok);
+        if (!ok) valid = false;
+      });
+
+      if (!valid) {
+        const alert = document.getElementById('formAlert');
+        alert.textContent = 'Please fix the errors above and try again.';
+        alert.style.display = 'block';
+        return;
+      }
+
+      document.getElementById('formAlert').style.display = 'none';
+
+      // Store form data
+      formData = {
+        fullName:        document.getElementById('fullName').value.trim(),
+        mobile:          document.getElementById('mobile').value.trim(),
+        email:           document.getElementById('email').value.trim(),
+        state:           document.getElementById('state').value,
+        applicationType: document.getElementById('applicationType').value,
+        vehicleType:     document.getElementById('vehicleType').value,
+        regNo:           document.getElementById('regNo').value.trim().toUpperCase(),
+        chassisNo:       document.getElementById('chassisNo').value.trim().toUpperCase(),
+        engineNo:        document.getElementById('engineNo').value.trim().toUpperCase(),
+        address:         document.getElementById('address').value.trim(),
+        pinCode:         document.getElementById('pinCode').value.trim(),
+        honeypot:        document.getElementById('honeypot').value,
+      };
+
+      // Populate payment step
+      const price = PRICES[formData.vehicleType] || 0;
+      document.getElementById('summaryVehicle').textContent = formData.vehicleType;
+      document.getElementById('summaryAppType').textContent = formData.applicationType;
+      document.getElementById('summaryAmount').textContent = '₹ ' + price;
+
+      // Switch steps
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+      document.getElementById('circle1').classList.remove('active');
+      document.getElementById('circle1').classList.add('done');
+      document.getElementById('circle1').textContent = '✓';
+      document.getElementById('circle2').classList.add('active');
+      document.getElementById('bar2').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── Back button ────────────────────────────────────────
+    document.getElementById('backBtn').addEventListener('click', function() {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step1').style.display = 'block';
+      document.getElementById('circle1').classList.add('active');
+      document.getElementById('circle1').classList.remove('done');
+      document.getElementById('circle1').textContent = '1';
+      document.getElementById('circle2').classList.remove('active');
+      document.getElementById('bar2').classList.remove('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── Payment Form Submit ────────────────────────────────
+    document.getElementById('paymentForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const txnId = document.getElementById('transactionId').value.trim();
+      if (!txnId) {
+        setFieldError('transactionId', 'transactionIdErr', true);
+        return;
+      }
+      setFieldError('transactionId', 'transactionIdErr', false);
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.textContent = 'Submitting…';
+      submitBtn.disabled = true;
+
+      const payload = {
+        ...formData,
+        transactionId: txnId,
+        amount: PRICES[formData.vehicleType] || 0,
+        timestamp: new Date().toISOString(),
+      };
+
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        // no-cors means we can't read the response, but submission goes through
+        // Redirect to confirmation
+        window.location.href = 'confirmation.html?ref=' + encodeURIComponent(txnId);
+      } catch (err) {
+        const alert = document.getElementById('paymentAlert');
+        alert.textContent = 'Something went wrong. Please try again or contact support.';
+        alert.style.display = 'block';
+        submitBtn.textContent = 'Submit Order';
+        submitBtn.disabled = false;
+      }
+    });
+
+    // ── Live uppercase for vehicle fields ──────────────────
+    ['regNo','chassisNo','engineNo'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function() {
+        const pos = this.selectionStart;
+        this.value = this.value.toUpperCase();
+        this.setSelectionRange(pos, pos);
+      });
+    });
+  </script>
+
+</body>
+</html>
